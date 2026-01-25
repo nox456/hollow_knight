@@ -1,8 +1,14 @@
 const config = {
     type: Phaser.AUTO,
-    width: 800,
+    width: 1400,
     height: 600,
     backgroundColor: '#1a1a2e',
+    scale: {
+        mode: Phaser.Scale.FIT,
+        autoCenter: Phaser.Scale.CENTER_BOTH,
+        width: 1400,
+        height: 600
+    },
     physics: {
         default: 'arcade',
         arcade: {
@@ -10,7 +16,7 @@ const config = {
             debug: false
         }
     },
-    scene: [GameScene]
+    scene: [GameScene, battle]
 };
 
 const game = new Phaser.Game(config);

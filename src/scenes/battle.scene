@@ -1,0 +1,146 @@
+{
+    "id": "aae2df0b-baa2-44d4-b0cb-19c217f3fc47",
+    "sceneType": "SCENE",
+    "settings": {
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "battle"
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "da7476e3-f93d-4688-947d-72eed7d762c9",
+            "label": "gemini_Generated_Image_vp1tznvp1tznvp1t_1_",
+            "texture": {
+                "key": "Gemini_Generated_Image_vp1tznvp1tznvp1t(1)"
+            },
+            "x": 384,
+            "y": 281,
+            "scaleX": 0.35066970010407383,
+            "scaleY": 0.5475445752379887
+        },
+        {
+            "type": "Image",
+            "id": "8ebffbf8-7b61-4170-966c-d2e91d7b8d8a",
+            "label": "harinapan",
+            "texture": {
+                "key": "harinapan"
+            },
+            "x": 653,
+            "y": 450,
+            "scaleX": 0.261155160502633,
+            "scaleY": 0.2964073455377455
+        },
+        {
+            "type": "Image",
+            "id": "b7b8647c-8a31-49dd-b80c-65517799a051",
+            "label": "edificio",
+            "texture": {
+                "key": "edificio"
+            },
+            "x": 61,
+            "y": 398,
+            "scaleX": 0.19685119272339005,
+            "scaleY": 0.32724702996480964
+        },
+        {
+            "type": "Image",
+            "id": "f64f61eb-f35b-4fd5-b2e3-85d1f4420176",
+            "label": "gemini_Generated_Image_36wnpx36wnpx36wn_1__1",
+            "texture": {
+                "key": "Gemini_Generated_Image_36wnpx36wnpx36wn(1)_1"
+            },
+            "x": 39,
+            "y": 407,
+            "scaleX": 0.17048086581338262,
+            "scaleY": 0.28172874204658394
+        },
+        {
+            "type": "Image",
+            "id": "2c70f6ad-da4a-4640-b7fa-5004df41701d",
+            "label": "baranda_atras",
+            "texture": {
+                "key": "baranda_atras"
+            },
+            "x": 339,
+            "y": 540,
+            "scaleX": 0.6162439803752455,
+            "scaleY": 0.06761660397365078
+        },
+        {
+            "prefabId": "3a5e3d1a-0091-4e76-af0b-7d73cf5e6256",
+            "id": "6f2db646-5eb6-4101-8709-e2f7f43710f2",
+            "unlock": [
+                "x",
+                "y",
+                "scaleX",
+                "scaleY"
+            ],
+            "label": "platform_prefab",
+            "x": 419,
+            "y": 573,
+            "scaleX": 0.6,
+            "scaleY": 0.07
+        },
+        {
+            "prefabId": "4aa1d6d6-60e7-4b81-9061-62d8c193a322",
+            "id": "f9c5a9a1-e040-4521-8253-abd345ac8bb4",
+            "unlock": [
+                "x",
+                "y",
+                "originX",
+                "originY",
+                "scaleX",
+                "scaleY"
+            ],
+            "label": "hornetPrefab",
+            "x": 76,
+            "y": 586,
+            "scaleX": 0.7,
+            "scaleY": 0.7,
+            "originX": 0.5,
+            "originY": 1
+        },
+        {
+            "type": "Image",
+            "id": "608a8948-6080-4146-85ab-efb013a32c4e",
+            "label": "baranda",
+            "texture": {
+                "key": "baranda"
+            },
+            "x": -12,
+            "y": 588,
+            "scaleX": 0.1596110705337342,
+            "scaleY": 0.13092539050211358
+        },
+        {
+            "type": "Image",
+            "id": "93a6716e-cfcb-413d-91d0-864574ab32af",
+            "label": "baranda_1",
+            "texture": {
+                "key": "baranda"
+            },
+            "x": 855,
+            "y": 593,
+            "scaleX": 0.1596110705337342,
+            "scaleY": 0.13092539050211358,
+            "angle": -3
+        }
+    ],
+    "plainObjects": [
+        {
+            "id": "5e42c467-4eb8-4bd0-a441-4bcb01bdd845",
+            "type": "Collider",
+            "label": "collider",
+            "scope": "LOCAL",
+            "object1": "hornetPrefab",
+            "object2": "platform_prefab"
+        }
+    ],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "src/assets/backgroundObjects/edificio.png",
+                "type": "image",
+                "key": "edificio"
+            },
+            {
+                "url": "src/assets/objectsBackground/Gemini_Generated_Image_36wnpx36wnpx36wn(1).png",
+                "type": "image",
+                "key": "Gemini_Generated_Image_36wnpx36wnpx36wn(1)"
+            },
+            {
+                "url": "src/assets/backgroundObjects/Gemini_Generated_Image_36wnpx36wnpx36wn(1).png",
+                "type": "image",
+                "key": "Gemini_Generated_Image_36wnpx36wnpx36wn(1)_1"
+            },
+            {
+                "url": "src/assets/backgroundObjects/harinapan.png",
+                "type": "image",
+                "key": "harinapan"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false,
+        "visible": true
+    }
+}

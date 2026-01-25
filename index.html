@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
             margin: 0;
             padding: 0;
         }
+
         body {
             display: flex;
             justify-content: center;
@@ -16,14 +18,23 @@
             min-height: 100vh;
             background-color: #1a1a2e;
         }
+
         canvas {
             display: block;
         }
     </style>
 </head>
+
 <body>
     <script src="node_modules/phaser/dist/phaser.min.js"></script>
+    <!-- Prefabs primero -->
+    <script src="src/assets/platform/platform_prefab.js"></script>
+    <script src="src/prefabs/hornetPrefab.js"></script>
+    <!-- Luego las escenas -->
     <script src="src/scenes/GameScene.js"></script>
+    <script src="src/scenes/battle.js"></script>
+    <!-- Finalmente main.js -->
     <script src="src/main.js"></script>
 </body>
+
 </html>

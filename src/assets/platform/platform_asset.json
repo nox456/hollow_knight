@@ -1,0 +1,29 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "src/assets/platform/baranda.png",
+                "type": "image",
+                "key": "baranda"
+            },
+            {
+                "url": "src/assets/platform/baranda_atras.png",
+                "type": "image",
+                "key": "baranda_atras"
+            },
+            {
+                "url": "src/assets/platform/Gemini_Generated_Image_uk8q9buk8q9buk8q(1).png",
+                "type": "image",
+                "key": "Gemini_Generated_Image_uk8q9buk8q9buk8q(1)"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false,
+        "visible": true
+    }
+}

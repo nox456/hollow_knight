@@ -18,6 +18,11 @@ class GameScene extends Phaser.Scene {
             fontSize: '18px',
             fill: '#888888'
         }).setOrigin(0.5);
+
+        // Detectar cuando se presiona cualquier tecla para iniciar el juego
+        this.input.keyboard.once('keydown', () => {
+            this.scene.start('battle');
+        });
     }
 
     update() {
