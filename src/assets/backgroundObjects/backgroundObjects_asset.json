@@ -7,16 +7,6 @@
                 "key": "edificio"
             },
             {
-                "url": "src/assets/objectsBackground/Gemini_Generated_Image_36wnpx36wnpx36wn(1).png",
-                "type": "image",
-                "key": "Gemini_Generated_Image_36wnpx36wnpx36wn(1)"
-            },
-            {
-                "url": "src/assets/backgroundObjects/Gemini_Generated_Image_36wnpx36wnpx36wn(1).png",
-                "type": "image",
-                "key": "Gemini_Generated_Image_36wnpx36wnpx36wn(1)_1"
-            },
-            {
                 "url": "src/assets/backgroundObjects/harinapan.png",
                 "type": "image",
                 "key": "harinapan"

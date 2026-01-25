@@ -1,0 +1,104 @@
+{
+    "anims": [
+        {
+            "key": "dashprepare_dash",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "prepare_dash_1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "prepare_dash_2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "prepare_dash_3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "prepare_dash_4",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "prepare_dash_5",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "prepare_dash_6",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "prepare_dash_7",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "prepare_dash_8",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "prepare_dash_9",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "dash_1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "dash_2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "finish_dash_1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "finish_dash_2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "finish_dash_3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "finish_dash_4",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "finish_dash_5",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 8,
+            "skipMissedFrames": true,
+            "repeat": -1,
+            "randomFrame": false
+        }
+    ],
+    "globalTimeScale": 1,
+    "meta": {
+        "app": "Phaser Editor 2D v3",
+        "contentType": "Phaser v3 Animations"
+    },
+    "settings": {
+        "sourceLang": "JAVA_SCRIPT",
+        "esModule": false,
+        "generateCode": false
+    }
+}

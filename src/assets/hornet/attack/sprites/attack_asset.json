@@ -1,0 +1,54 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "src/assets/hornet/attack/sprites/attack_sprite-1.png",
+                "type": "image",
+                "key": "attack_sprite-1"
+            },
+            {
+                "url": "src/assets/hornet/attack/sprites/attack_sprite-2.png",
+                "type": "image",
+                "key": "attack_sprite-2"
+            },
+            {
+                "url": "src/assets/hornet/attack/sprites/attack_sprite-3.png",
+                "type": "image",
+                "key": "attack_sprite-3"
+            },
+            {
+                "url": "src/assets/hornet/attack/sprites/attack_sprite-4.png",
+                "type": "image",
+                "key": "attack_sprite-4"
+            },
+            {
+                "url": "src/assets/hornet/attack/sprites/attack_sprite-5.png",
+                "type": "image",
+                "key": "attack_sprite-5"
+            },
+            {
+                "url": "src/assets/hornet/attack/sprites/attack_sprite-6.png",
+                "type": "image",
+                "key": "attack_sprite-6"
+            },
+            {
+                "url": "src/assets/hornet/attack/sprites/attack_sprite-7.png",
+                "type": "image",
+                "key": "attack_sprite-7"
+            },
+            {
+                "url": "src/assets/hornet/attack/sprites/attack_sprite-8.png",
+                "type": "image",
+                "key": "attack_sprite-8"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false,
+        "visible": true
+    }
+}

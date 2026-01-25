@@ -1,0 +1,94 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "src/assets/hornet/dash/sprites/dash_1.png",
+                "type": "image",
+                "key": "dash_1"
+            },
+            {
+                "url": "src/assets/hornet/dash/sprites/dash_2.png",
+                "type": "image",
+                "key": "dash_2"
+            },
+            {
+                "url": "src/assets/hornet/dash/sprites/finish_dash_1.png",
+                "type": "image",
+                "key": "finish_dash_1"
+            },
+            {
+                "url": "src/assets/hornet/dash/sprites/finish_dash_2.png",
+                "type": "image",
+                "key": "finish_dash_2"
+            },
+            {
+                "url": "src/assets/hornet/dash/sprites/finish_dash_3.png",
+                "type": "image",
+                "key": "finish_dash_3"
+            },
+            {
+                "url": "src/assets/hornet/dash/sprites/finish_dash_4.png",
+                "type": "image",
+                "key": "finish_dash_4"
+            },
+            {
+                "url": "src/assets/hornet/dash/sprites/finish_dash_5.png",
+                "type": "image",
+                "key": "finish_dash_5"
+            },
+            {
+                "url": "src/assets/hornet/dash/sprites/prepare_dash_1.png",
+                "type": "image",
+                "key": "prepare_dash_1"
+            },
+            {
+                "url": "src/assets/hornet/dash/sprites/prepare_dash_2.png",
+                "type": "image",
+                "key": "prepare_dash_2"
+            },
+            {
+                "url": "src/assets/hornet/dash/sprites/prepare_dash_3.png",
+                "type": "image",
+                "key": "prepare_dash_3"
+            },
+            {
+                "url": "src/assets/hornet/dash/sprites/prepare_dash_4.png",
+                "type": "image",
+                "key": "prepare_dash_4"
+            },
+            {
+                "url": "src/assets/hornet/dash/sprites/prepare_dash_5.png",
+                "type": "image",
+                "key": "prepare_dash_5"
+            },
+            {
+                "url": "src/assets/hornet/dash/sprites/prepare_dash_6.png",
+                "type": "image",
+                "key": "prepare_dash_6"
+            },
+            {
+                "url": "src/assets/hornet/dash/sprites/prepare_dash_7.png",
+                "type": "image",
+                "key": "prepare_dash_7"
+            },
+            {
+                "url": "src/assets/hornet/dash/sprites/prepare_dash_8.png",
+                "type": "image",
+                "key": "prepare_dash_8"
+            },
+            {
+                "url": "src/assets/hornet/dash/sprites/prepare_dash_9.png",
+                "type": "image",
+                "key": "prepare_dash_9"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false,
+        "visible": true
+    }
+}

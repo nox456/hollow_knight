@@ -27,6 +27,21 @@ class battle extends Phaser.Scene {
 
 		// Cargar imagen adicional que no está en los packs (comentada porque no existe)
 		// this.load.image("Gemini_Generated_Image_36wnpx36wnpx36wn(1)_1", "src/assets/backgroundObjects/Gemini_Generated_Image_36wnpx36wnpx36wn(1)_1.png");
+
+
+		// Partículas (Atmósfera) - Cargar variedad de cenizas
+		this.load.image("ash_1", "src/assets/particles/sprites/particle_sprite-1-1.png");
+		this.load.image("ash_2", "src/assets/particles/sprites/particle_sprite-13-1.png");
+		this.load.image("ash_3", "src/assets/particles/sprites/particle_sprite-13-2.png");
+		this.load.image("ash_4", "src/assets/particles/sprites/particle_sprite-16-1.png");
+		this.load.image("ash_5", "src/assets/particles/sprites/particle_sprite-2-1.png");
+		this.load.image("ash_6", "src/assets/particles/sprites/particle_sprite-6-1.png");
+		this.load.image("ash_7", "src/assets/particles/sprites/particle_sprite-5-1.png");
+		this.load.image("ash_8", "src/assets/particles/sprites/particle_sprite-8-1.png");
+		this.load.image("ash_9", "src/assets/particles/sprites/particle_sprite-9-1.png");
+		this.load.image("ash_10", "src/assets/particles/sprites/particle_sprite-11-1.png");
+
+		this.load.image("particle_spark", "src/assets/particles/sprites/particle_sprite-4-1.png");
 	}
 
 	// 2️⃣ EDITORCREATE: Generado, pero corregido con 'this.' para evitar conflictos
@@ -97,6 +112,9 @@ class battle extends Phaser.Scene {
 	create() {
 		this.editorCreate();
 
+		// Crear atmósfera (partículas)
+		this.createAtmosphere();
+
 		// Configurar controles de teclado
 		this.cursors = this.input.keyboard.createCursorKeys();
 
@@ -106,6 +124,55 @@ class battle extends Phaser.Scene {
 		this.player.setCollideWorldBounds(true);
 	}
 
+	createAtmosphere() {
+		const width = this.scale.width;
+		const height = this.scale.height;
+
+		// --- A. Emisores de Cenizas (Ash) ---
+		// Creamos un emisor para CADA textura para asegurar variedad total
+		const ashTextures = ['ash_1', 'ash_2', 'ash_3', 'ash_4', 'ash_5', 'ash_6', 'ash_7', 'ash_8', 'ash_9', 'ash_10'];
+
+		this.ashEmitters = [];
+
+		ashTextures.forEach((texture, index) => {
+			const emitter = this.add.particles(0, 0, texture, {
+				x: { min: 0, max: width },
+				y: -100,
+				lifespan: 11000,
+				// Variación de velocidad basada en el índice para que no caigan todas igual
+				speedX: { min: -40 - (index * 2), max: 10 + (index * 2) },
+				speedY: { min: 30 + (index * 5), max: 80 + (index * 2) },
+				// Escala reducida (más pequeñas)
+				scale: { start: 0.6, end: 0.2 },
+				alpha: { start: 0.8, end: 0.1 },
+				rotate: { min: 0, max: 360 },
+				// Frecuencia baja por emisor individual, pero alta en conjunto (10 emisores)
+				frequency: 1500 + (index * 100),
+				blendMode: 'NORMAL'
+			});
+			emitter.setDepth(5);
+			this.ashEmitters.push(emitter);
+		});
+
+		// --- B. Emisor de Chispas Incandescentes (Sparks) ---
+		// Simula material ardiendo que sube desde abajo
+		const sparkEmitter = this.add.particles(0, 0, 'particle_spark', {
+			emitZone: {
+				type: 'random',
+				source: new Phaser.Geom.Rectangle(0, height, width, 50)
+			},
+			lifespan: 2500,
+			speedY: { min: -150, max: -300 }, // Suben
+			speedX: { min: -50, max: 50 },    // Movimiento lateral errático
+			scale: { start: 0.6, end: 0 },
+			tint: [0xffcc00, 0xff4400, 0xff0000], // Degradado de fuego
+			blendMode: 'ADD', // Brillo
+			alpha: { start: 1, end: 0 },
+			frequency: 200
+		});
+		sparkEmitter.setDepth(20); // Frente (pero detrás de UI si la hubiera)
+	}
+
 	// 4️⃣ UPDATE: Bucle de juego
 	update() {
 		// Velocidad de movimiento
@@ -113,13 +180,18 @@ class battle extends Phaser.Scene {
 		const jumpVelocity = -400;
 
 		// Movimiento horizontal
+		let isMoving = false;
 		if (this.cursors.left.isDown) {
 			this.player.setVelocityX(-speed);
+			isMoving = true;
 		} else if (this.cursors.right.isDown) {
 			this.player.setVelocityX(speed);
+			isMoving = true;
 		} else {
 			this.player.setVelocityX(0);
 		}
+
+
 
 		// Salto - activar animación manualmente (evita bucles de animación)
 		if (this.cursors.up.isDown && this.player.body.onFloor()) {
