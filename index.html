@@ -27,13 +27,37 @@
 
 <body>
     <script src="node_modules/phaser/dist/phaser.min.js"></script>
-    <!-- Prefabs primero -->
+
+    <!-- Config y eventos -->
+    <script src="src/config/Config.js"></script>
+    <script src="src/events/GameEvents.js"></script>
+
+    <!-- Componentes -->
+    <script src="src/components/InputComponent.js"></script>
+    <script src="src/components/MovementComponent.js"></script>
+    <script src="src/components/HealthComponent.js"></script>
+    <script src="src/components/CombatComponent.js"></script>
+    <script src="src/components/AnimationComponent.js"></script>
+    <script src="src/components/StateMachineComponent.js"></script>
+
+    <!-- Estados (base primero) -->
+    <script src="src/states/HornetState.js"></script>
+    <script src="src/states/IdleState.js"></script>
+    <script src="src/states/RunState.js"></script>
+    <script src="src/states/JumpState.js"></script>
+    <script src="src/states/DashState.js"></script>
+    <script src="src/states/DashInAirState.js"></script>
+    <script src="src/states/AttackState.js"></script>
+
+    <!-- Prefabs -->
     <script src="src/assets/platform/platform_prefab.js"></script>
     <script src="src/prefabs/hornetPrefab.js"></script>
-    <!-- Luego las escenas -->
+
+    <!-- Escenas -->
     <script src="src/scenes/GameScene.js"></script>
     <script src="src/scenes/battle.js"></script>
-    <!-- Finalmente main.js -->
+
+    <!-- Main -->
     <script src="src/main.js"></script>
 </body>
 
