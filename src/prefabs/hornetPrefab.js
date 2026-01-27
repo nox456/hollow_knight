@@ -16,6 +16,12 @@ class hornetPrefab extends Phaser.Physics.Arcade.Sprite {
 		const offsetX = (182 - bodyWidth) / 2;
 		const offsetY = 214 - bodyHeight;
 
+		// Store original body values to maintain during animations
+		this.originalBodyOffsetX = offsetX;
+		this.originalBodyOffsetY = offsetY;
+		this.originalBodyWidth = bodyWidth;
+		this.originalBodyHeight = bodyHeight;
+
 		this.body.setSize(bodyWidth, bodyHeight, false);
 		this.body.setOffset(offsetX, offsetY);
 		this.removeInteractive();
@@ -74,5 +80,32 @@ class hornetPrefab extends Phaser.Physics.Arcade.Sprite {
 			Config.GLOW_TINT_BOTTOM_LEFT,
 			Config.GLOW_TINT_BOTTOM_RIGHT
 		);
+	}
+
+	// Get stable hitbox bounds (not affected by animation)
+	getStableHitbox() {
+		let width = this.originalBodyWidth;
+		let offsetX = this.x - (width / 2);
+
+		// Extend hitbox during attack in the direction player is facing
+		if (this.combat.isAttacking) {
+			const attackExtension = 60;
+			width += attackExtension;
+
+			if (this.flipX) {
+				// Facing left - extend to the left
+				offsetX = this.x - width + (this.originalBodyWidth / 2);
+			} else {
+				// Facing right - extend to the right
+				offsetX = this.x - (this.originalBodyWidth / 2);
+			}
+		}
+
+		return {
+			x: offsetX,
+			y: this.y - this.originalBodyHeight,
+			width: width,
+			height: this.originalBodyHeight
+		};
 	}
 }

@@ -64,7 +64,30 @@ class battle extends Phaser.Scene {
 		this.player.scaleY = 0.7;
 		this.player.refreshBody();
 
+		// Create boss on the right side of the screen
+		this.boss = new bossPrefab(this, 1100, 555);
+		this.add.existing(this.boss);
+		this.boss.setTarget(this.player);
+
 		this.physics.add.collider(this.player, this.platform);
+		this.physics.add.collider(this.boss, this.platform);
+
+		// Boss-player overlap/collision handling
+		this.physics.add.overlap(this.player, this.boss, () => {
+			// Boss attacks player when colliding
+			this.boss.onPlayerCollision();
+
+			// Deal damage only when boss is attacking
+			if (this.boss.isAttacking) {
+				this.player.health.takeDamage(Config.BOSS_ATTACK_DAMAGE);
+			}
+
+			// Player attacks boss when colliding and attacking
+			if (this.player.combat.isAttacking) {
+				const attackDirection = this.player.flipX ? -1 : 1;
+				this.boss.hurt(attackDirection);
+			}
+		});
 
 		this.events.emit("scene-awake");
 	}
@@ -72,8 +95,20 @@ class battle extends Phaser.Scene {
 	create() {
 		this.editorCreate();
 		this.createAtmosphere();
+		this.createUI();
 		this.player.controls.initialize();
 		this.setupEventListeners();
+	}
+
+	createUI() {
+		// Player health bar at top left
+		this.playerHealthBar = new HealthBarUI(this, 20, 20, 200, 20);
+
+		// Boss health bar at top right
+		this.bossHealthBar = new HealthBarUI(this, 1180, 20, 200, 20, {
+			hurtEvent: 'boss_hurt',
+			healEvent: 'boss_healed'
+		});
 	}
 
 	setupEventListeners() {
@@ -82,7 +117,24 @@ class battle extends Phaser.Scene {
 		});
 
 		this.events.on(GameEvents.PLAYER_DEAD, () => {
-			console.log('Hornet died!');
+			this.player.destroy();
+			this.playerHealthBar.destroy();
+
+			// Show defeat text
+			const defeatText = this.add.text(
+				this.scale.width / 2,
+				this.scale.height / 2,
+				'PERDISTE!',
+				{
+					fontSize: '96px',
+					fontFamily: 'Arial Black',
+					color: '#ff0000',
+					stroke: '#000000',
+					strokeThickness: 8
+				}
+			);
+			defeatText.setOrigin(0.5);
+			defeatText.setDepth(1000);
 		});
 
 		this.events.on(GameEvents.PLAYER_DASH_START, (isAirDash) => {
@@ -91,6 +143,27 @@ class battle extends Phaser.Scene {
 
 		this.events.on(GameEvents.PLAYER_ATTACK_START, () => {
 			console.log('Hornet attacked!');
+		});
+
+		this.events.on('boss_dead', () => {
+			this.boss.destroy();
+			this.bossHealthBar.destroy();
+
+			// Show victory text
+			const victoryText = this.add.text(
+				this.scale.width / 2,
+				this.scale.height / 2,
+				'GANASTE!',
+				{
+					fontSize: '96px',
+					fontFamily: 'Arial Black',
+					color: '#ffff00',
+					stroke: '#000000',
+					strokeThickness: 8
+				}
+			);
+			victoryText.setOrigin(0.5);
+			victoryText.setDepth(1000);
 		});
 	}
 
@@ -137,5 +210,21 @@ class battle extends Phaser.Scene {
 	}
 
 	update() {
+		// Stable hitbox-based attack detection
+		if (this.player && this.player.active && this.boss && this.boss.active && this.player.combat.isAttacking) {
+			const playerHitbox = this.player.getStableHitbox();
+			const bossBody = this.boss.body;
+
+			// Check rectangle intersection using stable player hitbox
+			const intersects = Phaser.Geom.Intersects.RectangleToRectangle(
+				new Phaser.Geom.Rectangle(playerHitbox.x, playerHitbox.y, playerHitbox.width, playerHitbox.height),
+				new Phaser.Geom.Rectangle(bossBody.x, bossBody.y, bossBody.width, bossBody.height)
+			);
+
+			if (intersects) {
+				const attackDirection = this.player.flipX ? -1 : 1;
+				this.boss.hurt(attackDirection);
+			}
+		}
 	}
 }
