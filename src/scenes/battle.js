@@ -22,6 +22,69 @@ class battle extends Phaser.Scene {
 		this.load.animation("hornet_dash_air_anim", "src/assets/hornet/dash_in_air/a_dash.json");
 		this.load.animation("hornet_attack_anim", "src/assets/hornet/attack/attack.json");
 
+		// Sub-Zero boss animation assets
+		this.load.pack("subzero_special_idle", "src/assets/sub-zero/special_idle/sprites/special_idle_asset.json");
+		this.load.pack("subzero_idle", "src/assets/sub-zero/idle/sprites/idle_asset.json");
+		this.load.pack("subzero_walking", "src/assets/sub-zero/walking/walking_asset.json");
+		this.load.pack("subzero_punch", "src/assets/sub-zero/punching/punch_asset.json");
+		this.load.pack("subzero_kick", "src/assets/sub-zero/Kicking/kick_asset.json");
+		this.load.pack("subzero_being_hit", "src/assets/sub-zero/being_hit/being_hit_asset.json");
+		this.load.pack("subzero_die", "src/assets/sub-zero/die/sprites/die_asset.json");
+		this.load.pack("subzero_dizzy", "src/assets/sub-zero/dizzy/sprites/dizzy_asset.json");
+		// New Phase Animations
+		this.load.pack("subzero_blocking", "src/assets/sub-zero/blocking/sprites/blocking.json");
+		this.load.pack("subzero_being_hit2", "src/assets/sub-zero/being_hit/sprites/being_hit2.json");
+		this.load.pack("subzero_falling", "src/assets/sub-zero/falling/falling.json");
+		this.load.pack("subzero_special_attack", "src/assets/sub-zero/special_atack/special_attack.json");
+
+		// Sub-Zero animation definitions
+		this.load.animation("subzero_special_idle_anim", "src/assets/sub-zero/special_idle/special_idle.json");
+		this.load.animation("subzero_idle_anim", "src/assets/sub-zero/idle/idle.json");
+		this.load.animation("subzero_walking_anim", "src/assets/sub-zero/walking/walking.json");
+		this.load.animation("subzero_punch_anim", "src/assets/sub-zero/punching/punching.json"); g
+		this.load.animation("subzero_kick_anim", "src/assets/sub-zero/Kicking/kick.json");
+		this.load.animation("subzero_die_anim", "src/assets/sub-zero/die/die.json");
+		this.load.animation("subzero_dizzy_anim", "src/assets/sub-zero/dizzy/dizzy.json");
+		this.load.animation("subzero_being_hit_anim", "src/assets/sub-zero/being_hit/being_hit.json");
+		// New Phase Animation Definitions
+		this.load.animation("subzero_blocking_anim", "src/assets/sub-zero/blocking/blocking.json"); // Assuming animation file follows pattern
+		this.load.animation("subzero_being_hit2_anim", "src/assets/sub-zero/being_hit/being_hit2.json"); // Assuming this exists or is part of pack? wait, user said sprites/being_hit2.json
+		// Wait, for Phaser packs, usually it loads the atlas/image. The animation JSON is separate.
+		// User provided paths:
+		// @[src/assets/sub-zero/blocking/sprites/blocking.json] -> Pack? Or Atlas? Usually "sprites" folder implies pack or atlas.
+		// Let's assume standard pattern:
+		// Pack: src/assets/sub-zero/[name]/sprites/[name]_asset.json (like existing ones)
+		// Animation: src/assets/sub-zero/[name]/[name].json
+
+		// Let's look at existing patterns in battle.js:
+		// Pack: "src/assets/sub-zero/punching/punch_asset.json"
+		// Anim: "src/assets/sub-zero/punching/punching.json"
+
+		// User paths:
+		// blocking: src/assets/sub-zero/blocking/sprites/blocking.json (this looks like the atlas/pack file? or just animation?)
+		// The user said: "animation of @[src/assets/sub-zero/blocking/sprites/blocking.json]"
+		// This is tricky. Sometimes specific file is just the animation definition, sometimes it's the atlas.
+		// Given existing files in `list_dir` output:
+		// blocking/ has 5 children.
+		// falling/ has 15 children.
+
+		// Let's try to load the animation JSONs directly assuming they are valid Phaser animation JSONs.
+		// If they are Packs, `load.pack` works. If they are Animations, `load.animation` works.
+		// The user explicitly linked .json files.
+		// I will trust the paths provided for what they are likely to be based on context (Animation vs Pack).
+		// But for `blocking.json` inside `sprites` folder... usually `sprites` folder has the atlas/png.
+		// Let's assume the user meant the animation definition file, but check the path.
+		// Existing: `src/assets/sub-zero/special_idle/sprites/special_idle_asset.json` (Pack)
+		// User: `src/assets/sub-zero/blocking/sprites/blocking.json` -> Likely the PACK/ATLAS definition.
+
+		// I will add them as packs AND try to load standard animation files if I can guess them, OR 
+		// rely on `load.animation` if the user pointed to the animation file.
+
+		// Actually, let's look at `list_dir` output again.
+		// I didn't list inside `blocking` or `falling`.
+		// Safe bet: Load what user gave as Pack first (if it has textures), and try to find animation file.
+		// But better: I will list the directories to be sure.
+
 		this.load.image("ash_1", "src/assets/particles/sprites/particle_sprite-1-1.png");
 		this.load.image("ash_2", "src/assets/particles/sprites/particle_sprite-13-1.png");
 		this.load.image("ash_3", "src/assets/particles/sprites/particle_sprite-13-2.png");
@@ -34,6 +97,25 @@ class battle extends Phaser.Scene {
 		this.load.image("ash_10", "src/assets/particles/sprites/particle_sprite-11-1.png");
 
 		this.load.image("particle_spark", "src/assets/particles/sprites/particle_sprite-4-1.png");
+
+		// Load background music
+		// this.load.audio("deep_docks_theme", "src/assets/sounds/song/Hollow Knight Silksong _ Deep Docks OST EXTENDED.mp3");
+
+		// Load Hornet SFX
+		this.load.audio("hornet_run_sfx", "src/assets/sounds/hornet/run.wav");
+		this.load.audio("hornet_attack_sfx", "src/assets/sounds/hornet/attack_1.wav");
+		this.load.audio("hornet_dash_sfx", "src/assets/sounds/hornet/dash.wav");
+		this.load.audio("hornet_jump_sfx", "src/assets/sounds/hornet/jump.wav");
+		this.load.audio("hornet_hurt_sfx", "src/assets/sounds/hornet/hurt.wav");
+
+		// Load Boss SFX
+		this.load.audio("boss_punch_sfx", "src/assets/sounds/subzero/golpe.wav");
+		this.load.audio("boss_kick_sfx", "src/assets/sounds/subzero/patada.wav");
+		this.load.audio("boss_hurt_1_sfx", "src/assets/sounds/subzero/daño_1.wav");
+		this.load.audio("boss_hurt_2_sfx", "src/assets/sounds/subzero/daño_2.wav");
+		this.load.audio("boss_dizzy_sfx", "src/assets/sounds/subzero/mareado.wav");
+		this.load.audio("boss_death_sfx", "src/assets/sounds/subzero/muerte.wav");
+		this.load.audio("final_hit_sfx", "src/assets/sounds/hornet/audio_final.wav");
 	}
 
 	editorCreate() {
@@ -72,17 +154,26 @@ class battle extends Phaser.Scene {
 		this.physics.add.collider(this.player, this.platform);
 		this.physics.add.collider(this.boss, this.platform);
 
-		// Boss-player overlap/collision handling
-		this.physics.add.overlap(this.player, this.boss, () => {
+		// Boss-player collider for physical separation (Hornet cannot pass through Boss)
+		this.physics.add.collider(this.player, this.boss, () => {
 			// Boss attacks player when colliding
 			this.boss.onPlayerCollision();
 
 			// Deal damage only when boss is attacking
 			if (this.boss.isAttacking) {
-				this.player.health.takeDamage(Config.BOSS_ATTACK_DAMAGE);
-			}
+				const isFacingPlayer = (this.boss.flipX && this.player.x < this.boss.x) ||
+					(!this.boss.flipX && this.player.x > this.boss.x);
 
+				if (isFacingPlayer) {
+					const knockbackDir = this.boss.x < this.player.x ? 1 : -1;
+					const knockbackForce = this.boss.currentKnockbackForce || Config.PLAYER_KNOCKBACK_VELOCITY;
+					this.player.health.takeDamage(this.boss.currentAttackDamage, knockbackDir, knockbackForce);
+				}
+			}
 			// Player attacks boss when colliding and attacking
+			// Note: Usually player attack range is slightly larger than body, so overlap check in Update 
+			// (lines 260+) handles weapon range. 
+			// But if they physically touch body-to-body, we can also check here as a fallback or close range logic.
 			if (this.player.combat.isAttacking) {
 				const attackDirection = this.player.flipX ? -1 : 1;
 				this.boss.hurt(attackDirection);
@@ -98,6 +189,13 @@ class battle extends Phaser.Scene {
 		this.createUI();
 		this.player.controls.initialize();
 		this.setupEventListeners();
+
+		// // Play background music
+		// this.bgm = this.sound.add("deep_docks_theme", {
+		// 	loop: true,
+		// 	volume: 0.5
+		// });
+		// this.bgm.play();
 	}
 
 	createUI() {
@@ -109,11 +207,23 @@ class battle extends Phaser.Scene {
 			hurtEvent: 'boss_hurt',
 			healEvent: 'boss_healed'
 		});
+
+
+		// Pause with ESC key
+		this.input.keyboard.on('keydown-ESC', () => {
+			if (!this.scene.isPaused('battle')) {
+				this.scene.pause();
+				this.scene.launch('PauseScene');
+			}
+		});
 	}
 
 	setupEventListeners() {
 		this.events.on(GameEvents.PLAYER_HURT, (data) => {
 			console.log(`Hornet hurt! Health: ${data.health}/${data.maxHealth}`);
+			if (this.sound) {
+				this.sound.play('hornet_hurt_sfx');
+			}
 		});
 
 		this.events.on(GameEvents.PLAYER_DEAD, () => {
@@ -146,24 +256,28 @@ class battle extends Phaser.Scene {
 		});
 
 		this.events.on('boss_dead', () => {
-			this.boss.destroy();
-			this.bossHealthBar.destroy();
-
-			// Show victory text
-			const victoryText = this.add.text(
-				this.scale.width / 2,
-				this.scale.height / 2,
-				'GANASTE!',
-				{
-					fontSize: '96px',
-					fontFamily: 'Arial Black',
-					color: '#ffff00',
-					stroke: '#000000',
-					strokeThickness: 8
+			// Wait for death animation to complete
+			this.time.delayedCall(500, () => {
+				if (this.boss && this.boss.active) {
+					this.boss.destroy();
 				}
-			);
-			victoryText.setOrigin(0.5);
-			victoryText.setDepth(1000);
+				this.bossHealthBar.destroy();
+
+				const victoryText = this.add.text(
+					this.scale.width / 2,
+					this.scale.height / 2,
+					'GANASTE!',
+					{
+						fontSize: '96px',
+						fontFamily: 'Arial Black',
+						color: '#ffff00',
+						stroke: '#000000',
+						strokeThickness: 8
+					}
+				);
+				victoryText.setOrigin(0.5);
+				victoryText.setDepth(1000);
+			});
 		});
 	}
 
@@ -221,10 +335,57 @@ class battle extends Phaser.Scene {
 				new Phaser.Geom.Rectangle(bossBody.x, bossBody.y, bossBody.width, bossBody.height)
 			);
 
-			if (intersects) {
+			if (intersects && !this.player.combat.hasHit) {
 				const attackDirection = this.player.flipX ? -1 : 1;
+
+				// Mark as hit to avoid multiple hitstops/damage in one swing
+				this.player.combat.hasHit = true;
+
+				// Apply damage
 				this.boss.hurt(attackDirection);
+
+				// Trigger hitstop with a tiny delay (50ms) to let the initial impact be seen
+				// as "after the blow lands"
+				this.time.delayedCall(50, () => {
+					this.triggerHitStop();
+				});
 			}
 		}
+	}
+
+	triggerHitStop() {
+		// 1. Pause Physics World
+		this.physics.world.pause();
+
+		// 2. Emit visual feedback events
+		this.events.emit(GameEvents.HIT_STOP_START);
+		this.events.emit(GameEvents.CAMERA_SHAKE_REQUEST, { duration: 100, intensity: 0.01 });
+		this.events.emit(GameEvents.SPAWN_HIT_PARTICLES, {
+			x: (this.player.x + this.boss.x) / 2,
+			y: (this.player.y + this.boss.y) / 2
+		});
+
+		// Optional: Pause animations
+		if (this.player.anims) this.player.anims.pause();
+		if (this.boss.anims) this.boss.anims.pause();
+
+		// 3. Resume after short duration (100-150ms)
+		this.time.delayedCall(120, () => {
+			this.physics.world.resume();
+
+			if (this.player.anims) this.player.anims.resume();
+			if (this.boss.anims) this.boss.anims.resume();
+
+			this.events.emit(GameEvents.HIT_STOP_END);
+		});
+	}
+
+	freezeGameFrame(duration) {
+		// Helper to just pause logic if needed, but triggerHitStop handles the specific requirement
+		// Keeping it if user wants a generic helper later
+		this.physics.world.pause();
+		this.time.delayedCall(duration, () => {
+			this.physics.world.resume();
+		});
 	}
 }

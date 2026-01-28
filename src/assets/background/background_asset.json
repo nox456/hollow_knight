@@ -2,9 +2,24 @@
     "section1": {
         "files": [
             {
+                "url": "src/assets/background/estructura.png",
+                "type": "image",
+                "key": "estructura"
+            },
+            {
+                "url": "src/assets/background/fondo.png",
+                "type": "image",
+                "key": "fondo"
+            },
+            {
                 "url": "src/assets/background/Gemini_Generated_Image_vp1tznvp1tznvp1t(1).png",
                 "type": "image",
                 "key": "Gemini_Generated_Image_vp1tznvp1tznvp1t(1)"
+            },
+            {
+                "url": "src/assets/background/plataforma.png",
+                "type": "image",
+                "key": "plataforma"
             }
         ]
     },

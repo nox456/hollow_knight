@@ -16,7 +16,7 @@ const config = {
             debug: false
         }
     },
-    scene: [GameScene, battle]
+    scene: [GameScene, battle, PauseScene]
 };
 
 const game = new Phaser.Game(config);

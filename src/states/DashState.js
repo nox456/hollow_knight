@@ -9,6 +9,11 @@ class DashState extends HornetState {
 
         // Reproducir animación de dash
         this.animation.play('hornet_dash');
+
+        // Play dash SFX
+        if (this.owner.scene.sound) {
+            this.owner.scene.sound.play('hornet_dash_sfx');
+        }
     }
 
     update(deltaMs) {

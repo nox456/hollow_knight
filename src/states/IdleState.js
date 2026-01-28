@@ -19,7 +19,7 @@ class IdleState extends HornetState {
         }
 
         // Verificar ataque
-        if (this.input.isAttackJustPressed()) {
+        if (this.input.isAttackJustPressed() && this.combat.canAttack()) {
             this.stateMachine.setState('ATTACK');
             return;
         }

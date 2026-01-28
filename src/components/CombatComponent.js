@@ -3,8 +3,10 @@ class CombatComponent {
         this.owner = owner;
         this.isAttacking = false;
         this.attackEndTime = 0;
+        this.nextAttackTime = 0; // Timestamp for next available attack
         this.hitbox = null;
         this.hitboxGraphics = null;
+        this.hasHit = false;
     }
 
     update() {
@@ -14,12 +16,15 @@ class CombatComponent {
     }
 
     startAttack() {
-        if (this.isAttacking) {
+        // Check cooldown
+        if (this.isAttacking || Date.now() < this.nextAttackTime) {
             return false;
         }
 
         this.isAttacking = true;
+        this.hasHit = false;
         this.attackEndTime = Date.now() + Config.ATTACK_DURATION_MS;
+        this.nextAttackTime = this.attackEndTime + Config.ATTACK_COOLDOWN_MS; // Set cooldown
 
         this.createHitbox();
         this.owner.scene.events.emit(GameEvents.PLAYER_ATTACK_START);
@@ -86,5 +91,9 @@ class CombatComponent {
 
     isCurrentlyAttacking() {
         return this.isAttacking;
+    }
+
+    canAttack() {
+        return !this.isAttacking && Date.now() >= this.nextAttackTime;
     }
 }

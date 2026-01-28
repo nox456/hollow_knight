@@ -5,6 +5,11 @@ class RunState extends HornetState {
 
     enter() {
         this.animation.play('hornet_run');
+        // Start run sound loop
+        if (this.owner.scene.sound) {
+            this.runSound = this.owner.scene.sound.add('hornet_run_sfx', { loop: true, volume: 0.5 });
+            this.runSound.play();
+        }
     }
 
     update(deltaMs) {
@@ -18,7 +23,7 @@ class RunState extends HornetState {
         }
 
         // Verificar ataque
-        if (this.input.isAttackJustPressed()) {
+        if (this.input.isAttackJustPressed() && this.combat.canAttack()) {
             this.stateMachine.setState('ATTACK');
             return;
         }
@@ -47,6 +52,11 @@ class RunState extends HornetState {
     }
 
     exit() {
-        // Nada que limpiar
+        // Stop run sound
+        if (this.runSound) {
+            this.runSound.stop();
+            this.runSound.destroy();
+            this.runSound = null;
+        }
     }
 }

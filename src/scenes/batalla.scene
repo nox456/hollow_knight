@@ -1,0 +1,82 @@
+{
+    "id": "e242b096-92c3-4309-8367-1d03a1ec98b0",
+    "sceneType": "SCENE",
+    "settings": {
+        "exportClass": true,
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "batalla"
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "e55894d2-2c96-4eb9-9413-ca678d83560c",
+            "label": "fondo",
+            "texture": {
+                "key": "fondo"
+            },
+            "x": 403,
+            "y": 297,
+            "scaleX": 0.3097838299155921,
+            "scaleY": 0.4166050358684542
+        },
+        {
+            "type": "Image",
+            "id": "d739fb4d-fd2e-45e1-8eb8-f0d298eb943b",
+            "label": "estructura",
+            "texture": {
+                "key": "estructura"
+            },
+            "x": 204,
+            "y": 347,
+            "scaleX": 0.23362849946960582,
+            "scaleY": 0.18173099297750162
+        },
+        {
+            "prefabId": "60ba77de-6450-48a1-98fe-2a463ab6f0e0",
+            "id": "a28e4be2-7b54-4e40-8ee4-719b2dbdd1fb",
+            "unlock": [
+                "x",
+                "y",
+                "scaleX",
+                "scaleY"
+            ],
+            "label": "plataforma",
+            "x": 403,
+            "y": 582,
+            "scaleX": 0.3437916737294756,
+            "scaleY": 0.17614312033292798
+        },
+        {
+            "prefabId": "4aa1d6d6-60e7-4b81-9061-62d8c193a322",
+            "id": "109debf8-9335-4ae6-9fe5-c76f2c7e50e6",
+            "unlock": [
+                "x",
+                "y",
+                "scaleX",
+                "scaleY"
+            ],
+            "label": "hornetPrefab",
+            "x": 93,
+            "y": 515,
+            "scaleX": 1,
+            "scaleY": 1
+        }
+    ],
+    "plainObjects": [
+        {
+            "id": "07e2c4bf-9894-4d4b-91c9-b252979589eb",
+            "type": "Collider",
+            "label": "collider",
+            "scope": "LOCAL",
+            "object1": "plataforma",
+            "object2": "hornetPrefab"
+        }
+    ],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

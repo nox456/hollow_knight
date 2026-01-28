@@ -10,5 +10,9 @@ const GameEvents = {
     ANIM_DASH_COMPLETE: 'anim_dash_complete',
     ANIM_ATTACK_COMPLETE: 'anim_attack_complete',
     HITBOX_ACTIVATED: 'hitbox_activated',
-    HITBOX_DEACTIVATED: 'hitbox_deactivated'
+    HITBOX_DEACTIVATED: 'hitbox_deactivated',
+    HIT_STOP_START: 'hit_stop_start',
+    HIT_STOP_END: 'hit_stop_end',
+    CAMERA_SHAKE_REQUEST: 'camera_shake_request',
+    SPAWN_HIT_PARTICLES: 'spawn_hit_particles'
 };

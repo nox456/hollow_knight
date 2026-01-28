@@ -1,0 +1,79 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "src/assets/sub-zero/falling/sprites/f01.png",
+                "type": "image",
+                "key": "f01"
+            },
+            {
+                "url": "src/assets/sub-zero/falling/sprites/f02.png",
+                "type": "image",
+                "key": "f02"
+            },
+            {
+                "url": "src/assets/sub-zero/falling/sprites/f03.png",
+                "type": "image",
+                "key": "f03"
+            },
+            {
+                "url": "src/assets/sub-zero/falling/sprites/f04.png",
+                "type": "image",
+                "key": "f04"
+            },
+            {
+                "url": "src/assets/sub-zero/falling/sprites/f05.png",
+                "type": "image",
+                "key": "f05"
+            },
+            {
+                "url": "src/assets/sub-zero/falling/sprites/f06.png",
+                "type": "image",
+                "key": "f06"
+            },
+            {
+                "url": "src/assets/sub-zero/falling/sprites/f07.png",
+                "type": "image",
+                "key": "f07"
+            },
+            {
+                "url": "src/assets/sub-zero/falling/sprites/f08.png",
+                "type": "image",
+                "key": "f08"
+            },
+            {
+                "url": "src/assets/sub-zero/falling/sprites/f09.png",
+                "type": "image",
+                "key": "f09"
+            },
+            {
+                "url": "src/assets/sub-zero/falling/sprites/f10.png",
+                "type": "image",
+                "key": "f10"
+            },
+            {
+                "url": "src/assets/sub-zero/falling/sprites/f11.png",
+                "type": "image",
+                "key": "f11"
+            },
+            {
+                "url": "src/assets/sub-zero/falling/sprites/f12.png",
+                "type": "image",
+                "key": "f12"
+            },
+            {
+                "url": "src/assets/sub-zero/falling/sprites/f13.png",
+                "type": "image",
+                "key": "f13"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false,
+        "visible": true
+    }
+}

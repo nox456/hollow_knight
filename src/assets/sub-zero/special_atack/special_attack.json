@@ -1,0 +1,64 @@
+{
+    "anims": [
+        {
+            "key": "special_attackd",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "d01",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "d02",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "d03",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "u01",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "u02",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "u03",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "u04",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "u05",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 6,
+            "skipMissedFrames": true,
+            "repeat": -1,
+            "randomFrame": false
+        }
+    ],
+    "globalTimeScale": 1,
+    "meta": {
+        "app": "Phaser Editor 2D v3",
+        "contentType": "Phaser v3 Animations"
+    },
+    "settings": {
+        "sourceLang": "JAVA_SCRIPT",
+        "esModule": false,
+        "generateCode": false
+    }
+}

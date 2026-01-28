@@ -7,6 +7,10 @@ class JumpState extends HornetState {
         // Ejecutar salto solo si estamos en el suelo
         if (this.input.isGrounded()) {
             this.movement.jump();
+            // Play jump SFX
+            if (this.owner.scene.sound) {
+                this.owner.scene.sound.play('hornet_jump_sfx');
+            }
         }
 
         // Reproducir animación de salto
@@ -17,7 +21,7 @@ class JumpState extends HornetState {
         // Prioridad: Ataque > Dash en aire > Control horizontal > Aterrizaje
 
         // Verificar ataque
-        if (this.input.isAttackJustPressed()) {
+        if (this.input.isAttackJustPressed() && this.combat.canAttack()) {
             this.stateMachine.setState('ATTACK');
             return;
         }

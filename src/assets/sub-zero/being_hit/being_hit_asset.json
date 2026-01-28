@@ -2,6 +2,11 @@
     "section1": {
         "files": [
             {
+                "url": "src/assets/sub-zero/being_hit/sprites/being__hurt2-3.png",
+                "type": "image",
+                "key": "being__hurt2-3"
+            },
+            {
                 "url": "src/assets/sub-zero/being_hit/sprites/being_hit_01.png",
                 "type": "image",
                 "key": "being_hit_01"
@@ -15,6 +20,46 @@
                 "url": "src/assets/sub-zero/being_hit/sprites/being_hit_03.png",
                 "type": "image",
                 "key": "being_hit_03"
+            },
+            {
+                "url": "src/assets/sub-zero/being_hit/sprites/being_hurt1-1.png",
+                "type": "image",
+                "key": "being_hurt1-1"
+            },
+            {
+                "url": "src/assets/sub-zero/being_hit/sprites/being_hurt1-2.png",
+                "type": "image",
+                "key": "being_hurt1-2"
+            },
+            {
+                "url": "src/assets/sub-zero/being_hit/sprites/being_hurt2-1.png",
+                "type": "image",
+                "key": "being_hurt2-1"
+            },
+            {
+                "url": "src/assets/sub-zero/being_hit/sprites/being_hurt2-2.png",
+                "type": "image",
+                "key": "being_hurt2-2"
+            },
+            {
+                "url": "src/assets/sub-zero/being_hit/sprites/being_hurt2-3.png",
+                "type": "image",
+                "key": "being_hurt2-3"
+            },
+            {
+                "url": "src/assets/sub-zero/being_hit/sprites/being_hurt2-4.png",
+                "type": "image",
+                "key": "being_hurt2-4"
+            },
+            {
+                "url": "src/assets/sub-zero/being_hit/sprites/being_hurt2-5.png",
+                "type": "image",
+                "key": "being_hurt2-5"
+            },
+            {
+                "url": "src/assets/sub-zero/being_hit/sprites/being_hurt2-6.png",
+                "type": "image",
+                "key": "being_hurt2-6"
             }
         ]
     },

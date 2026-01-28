@@ -14,7 +14,7 @@ class HealthComponent {
         }
     }
 
-    takeDamage(amount) {
+    takeDamage(amount, knockbackDirection = 0, knockbackForce = Config.PLAYER_KNOCKBACK_VELOCITY) {
         // No recibir daño si está invencible o muerta
         if (this.isInvincible || this.isDead()) {
             return false;
@@ -26,6 +26,18 @@ class HealthComponent {
         // Activar invencibilidad temporal
         this.isInvincible = true;
         this.invincibilityEndTime = Date.now() + Config.INVINCIBILITY_DURATION_MS;
+
+        // Apply knockback
+        if (knockbackDirection !== 0) {
+            this.owner.body.setVelocity(knockbackDirection * knockbackForce, -100);
+
+            // Stop movement after a short delay (minimal push)
+            this.owner.scene.time.delayedCall(200, () => {
+                if (this.owner && this.owner.body) {
+                    this.owner.body.setVelocityX(0);
+                }
+            });
+        }
 
         // Emitir evento de daño
         this.owner.scene.events.emit(GameEvents.PLAYER_HURT, {

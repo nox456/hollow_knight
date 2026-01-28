@@ -16,6 +16,11 @@ class AttackState extends HornetState {
 
         // Reproducir animación de ataque
         this.animation.play('hornet_attack');
+
+        // Play attack SFX
+        if (this.owner.scene.sound) {
+            this.owner.scene.sound.play('hornet_attack_sfx');
+        }
     }
 
     update(deltaMs) {

@@ -11,9 +11,29 @@ const Config = {
     BOSS_ATTACK_DAMAGE: 10,
     BOSS_HURT_DURATION_MS: 1000,
     BOSS_HURT_COLOR: 0x0066ff,
-    BOSS_KNOCKBACK_VELOCITY: 200,
-    BOSS_MAX_HEALTH: 100,
+    BOSS_KNOCKBACK_VELOCITY: -400,
+    BOSS_MAX_HEALTH: 200,
     BOSS_HURT_DAMAGE: 10,
+    BOSS_DIZZY_DURATION_MS: 3000,
+
+    // Boss Phase Logic
+    BOSS_PHASE_2_THRESHOLD: 0.8, // 80% HP
+    BOSS_PHASE_3_THRESHOLD: 0.4, // 40% HP
+
+    // Phase 2 Modifiers (80-40%)
+    BOSS_PHASE_2_SPEED_MULT: 1.2,
+    BOSS_PHASE_2_DAMAGE_MULT: 1.2,
+    BOSS_PHASE_2_COOLDOWN_MS: 700, // Reduced from 1000
+    BOSS_BLOCK_CHANCE: 0.3, // 30% chance to block
+
+    // Phase 3 Modifiers (40-0%)
+    BOSS_PHASE_3_SPEED_MULT: 1.3, // Total increase vs base
+    BOSS_PHASE_3_DAMAGE_MULT: 1.4, // Total increase vs base
+    BOSS_PHASE_3_COOLDOWN_MS: 500, // Reduced significantly
+    BOSS_SPECIAL_ATTACK_DAMAGE: 30, // Big damage
+    BOSS_SPECIAL_ATTACK_KNOCKBACK: 800, // Huge knockback
+
+    PLAYER_KNOCKBACK_VELOCITY: 400,
 
     HORNET_WALK_SPEED: 200,
     HORNET_JUMP_VELOCITY: -400,
@@ -28,6 +48,7 @@ const Config = {
     DASH_AIR_DURATION_MS: 250,
 
     ATTACK_DURATION_MS: 250,
+    ATTACK_COOLDOWN_MS: 500, // Cooldown time for attack
     ATTACK_HITBOX_WIDTH: 120,
     ATTACK_HITBOX_HEIGHT: 80,
     ATTACK_DAMAGE: 10,
