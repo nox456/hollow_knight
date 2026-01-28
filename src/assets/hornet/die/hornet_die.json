@@ -1,0 +1,54 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "src/assets/hornet/die/sprites/00_Gemini_Generated_Image_d4rqegd4rqegd4rq-removebg-preview.png",
+                "type": "image",
+                "key": "00_Gemini_Generated_Image_d4rqegd4rqegd4rq-removebg-preview"
+            },
+            {
+                "url": "src/assets/hornet/die/sprites/01_Gemini_Generated_Image_d4rqegd4rqegd4rq-removebg-preview.png",
+                "type": "image",
+                "key": "01_Gemini_Generated_Image_d4rqegd4rqegd4rq-removebg-preview"
+            },
+            {
+                "url": "src/assets/hornet/die/sprites/02_Gemini_Generated_Image_d4rqegd4rqegd4rq-removebg-preview.png",
+                "type": "image",
+                "key": "02_Gemini_Generated_Image_d4rqegd4rqegd4rq-removebg-preview"
+            },
+            {
+                "url": "src/assets/hornet/die/sprites/03_Gemini_Generated_Image_d4rqegd4rqegd4rq-removebg-preview.png",
+                "type": "image",
+                "key": "03_Gemini_Generated_Image_d4rqegd4rqegd4rq-removebg-preview"
+            },
+            {
+                "url": "src/assets/hornet/die/sprites/04_Gemini_Generated_Image_d4rqegd4rqegd4rq-removebg-preview.png",
+                "type": "image",
+                "key": "04_Gemini_Generated_Image_d4rqegd4rqegd4rq-removebg-preview"
+            },
+            {
+                "url": "src/assets/hornet/die/sprites/05_Gemini_Generated_Image_d4rqegd4rqegd4rq-removebg-preview.png",
+                "type": "image",
+                "key": "05_Gemini_Generated_Image_d4rqegd4rqegd4rq-removebg-preview"
+            },
+            {
+                "url": "src/assets/hornet/die/sprites/06_Gemini_Generated_Image_d4rqegd4rqegd4rq-removebg-preview.png",
+                "type": "image",
+                "key": "06_Gemini_Generated_Image_d4rqegd4rqegd4rq-removebg-preview"
+            },
+            {
+                "url": "src/assets/hornet/die/sprites/07_Gemini_Generated_Image_d4rqegd4rqegd4rq-removebg-preview.png",
+                "type": "image",
+                "key": "07_Gemini_Generated_Image_d4rqegd4rqegd4rq-removebg-preview"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false,
+        "visible": true
+    }
+}

@@ -1,0 +1,49 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "src/assets/sub-zero/Kicking/sprites/kick_01.png",
+                "type": "image",
+                "key": "kick_01"
+            },
+            {
+                "url": "src/assets/sub-zero/Kicking/sprites/kick_02.png",
+                "type": "image",
+                "key": "kick_02"
+            },
+            {
+                "url": "src/assets/sub-zero/Kicking/sprites/kick_03.png",
+                "type": "image",
+                "key": "kick_03"
+            },
+            {
+                "url": "src/assets/sub-zero/Kicking/sprites/kick_04.png",
+                "type": "image",
+                "key": "kick_04"
+            },
+            {
+                "url": "src/assets/sub-zero/Kicking/sprites/kick_05.png",
+                "type": "image",
+                "key": "kick_05"
+            },
+            {
+                "url": "src/assets/sub-zero/Kicking/sprites/kick_06.png",
+                "type": "image",
+                "key": "kick_06"
+            },
+            {
+                "url": "src/assets/sub-zero/Kicking/sprites/kick_07.png",
+                "type": "image",
+                "key": "kick_07"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false,
+        "visible": true
+    }
+}

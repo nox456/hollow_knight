@@ -1,0 +1,49 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "src/assets/sub-zero/dizzy/sprites/dizzy_01.png",
+                "type": "image",
+                "key": "dizzy_01"
+            },
+            {
+                "url": "src/assets/sub-zero/dizzy/sprites/dizzy_02.png",
+                "type": "image",
+                "key": "dizzy_02"
+            },
+            {
+                "url": "src/assets/sub-zero/dizzy/sprites/dizzy_03.png",
+                "type": "image",
+                "key": "dizzy_03"
+            },
+            {
+                "url": "src/assets/sub-zero/dizzy/sprites/dizzy_04.png",
+                "type": "image",
+                "key": "dizzy_04"
+            },
+            {
+                "url": "src/assets/sub-zero/dizzy/sprites/dizzy_05.png",
+                "type": "image",
+                "key": "dizzy_05"
+            },
+            {
+                "url": "src/assets/sub-zero/dizzy/sprites/dizzy_06.png",
+                "type": "image",
+                "key": "dizzy_06"
+            },
+            {
+                "url": "src/assets/sub-zero/dizzy/sprites/dizzy_07.png",
+                "type": "image",
+                "key": "dizzy_07"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false,
+        "visible": true
+    }
+}

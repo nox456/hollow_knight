@@ -1,0 +1,79 @@
+{
+    "anims": [
+        {
+            "key": "subzero_diedie",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "die_01",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "die_02",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "die_03",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "die_04",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "die_05",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "die_06",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "die_07",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "die_08",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "die_09",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "die_10",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "die_10",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 6,
+            "skipMissedFrames": true,
+            "repeat": -1,
+            "randomFrame": false
+        }
+    ],
+    "globalTimeScale": 1,
+    "meta": {
+        "app": "Phaser Editor 2D v3",
+        "contentType": "Phaser v3 Animations"
+    },
+    "settings": {
+        "sourceLang": "JAVA_SCRIPT",
+        "esModule": false,
+        "generateCode": false
+    }
+}

@@ -1,0 +1,59 @@
+{
+    "anims": [
+        {
+            "key": "dizzydizzy",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "dizzy_01",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "dizzy_02",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "dizzy_03",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "dizzy_04",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "dizzy_05",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "dizzy_06",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "dizzy_07",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 6,
+            "skipMissedFrames": true,
+            "repeat": -1,
+            "randomFrame": false
+        }
+    ],
+    "globalTimeScale": 1,
+    "meta": {
+        "app": "Phaser Editor 2D v3",
+        "contentType": "Phaser v3 Animations"
+    },
+    "settings": {
+        "sourceLang": "JAVA_SCRIPT",
+        "esModule": false,
+        "generateCode": false
+    }
+}

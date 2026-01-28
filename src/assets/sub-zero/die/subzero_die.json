@@ -1,0 +1,64 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "src/assets/sub-zero/die/sprites/die_01.png",
+                "type": "image",
+                "key": "die_01"
+            },
+            {
+                "url": "src/assets/sub-zero/die/sprites/die_02.png",
+                "type": "image",
+                "key": "die_02"
+            },
+            {
+                "url": "src/assets/sub-zero/die/sprites/die_03.png",
+                "type": "image",
+                "key": "die_03"
+            },
+            {
+                "url": "src/assets/sub-zero/die/sprites/die_04.png",
+                "type": "image",
+                "key": "die_04"
+            },
+            {
+                "url": "src/assets/sub-zero/die/sprites/die_05.png",
+                "type": "image",
+                "key": "die_05"
+            },
+            {
+                "url": "src/assets/sub-zero/die/sprites/die_06.png",
+                "type": "image",
+                "key": "die_06"
+            },
+            {
+                "url": "src/assets/sub-zero/die/sprites/die_07.png",
+                "type": "image",
+                "key": "die_07"
+            },
+            {
+                "url": "src/assets/sub-zero/die/sprites/die_08.png",
+                "type": "image",
+                "key": "die_08"
+            },
+            {
+                "url": "src/assets/sub-zero/die/sprites/die_09.png",
+                "type": "image",
+                "key": "die_09"
+            },
+            {
+                "url": "src/assets/sub-zero/die/sprites/die_10.png",
+                "type": "image",
+                "key": "die_10"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false,
+        "visible": true
+    }
+}

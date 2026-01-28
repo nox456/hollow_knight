@@ -1,0 +1,59 @@
+{
+    "anims": [
+        {
+            "key": "die",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "01_Gemini_Generated_Image_d4rqegd4rqegd4rq-removebg-preview",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "03_Gemini_Generated_Image_d4rqegd4rqegd4rq-removebg-preview",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "05_Gemini_Generated_Image_d4rqegd4rqegd4rq-removebg-preview",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "06_Gemini_Generated_Image_d4rqegd4rqegd4rq-removebg-preview",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "07_Gemini_Generated_Image_d4rqegd4rqegd4rq-removebg-preview",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "07_Gemini_Generated_Image_d4rqegd4rqegd4rq-removebg-preview",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "07_Gemini_Generated_Image_d4rqegd4rqegd4rq-removebg-preview",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 6,
+            "skipMissedFrames": true,
+            "repeat": -1,
+            "randomFrame": false
+        }
+    ],
+    "globalTimeScale": 1,
+    "meta": {
+        "app": "Phaser Editor 2D v3",
+        "contentType": "Phaser v3 Animations"
+    },
+    "settings": {
+        "sourceLang": "JAVA_SCRIPT",
+        "esModule": false,
+        "generateCode": false
+    }
+}
