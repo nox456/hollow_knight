@@ -1,0 +1,34 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "src/assets/sub-zero/special_idle/sprites/special_idle-01.png",
+                "type": "image",
+                "key": "special_idle-01"
+            },
+            {
+                "url": "src/assets/sub-zero/special_idle/sprites/special_idle-02.png",
+                "type": "image",
+                "key": "special_idle-02"
+            },
+            {
+                "url": "src/assets/sub-zero/special_idle/sprites/special_idle-03.png",
+                "type": "image",
+                "key": "special_idle-03"
+            },
+            {
+                "url": "src/assets/sub-zero/special_idle/sprites/special_idle-04.png",
+                "type": "image",
+                "key": "special_idle-04"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false,
+        "visible": true
+    }
+}

@@ -1,0 +1,79 @@
+{
+    "anims": [
+        {
+            "key": "punchingpunching",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "punching_01",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "punching_02",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "punching_03",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "punching_04",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "punching_05",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "punching_06",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "punching_07",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "punching_08",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "punching_09",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "punching_10",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "punching_11",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 8,
+            "skipMissedFrames": true,
+            "repeat": -1,
+            "randomFrame": false
+        }
+    ],
+    "globalTimeScale": 1,
+    "meta": {
+        "app": "Phaser Editor 2D v3",
+        "contentType": "Phaser v3 Animations"
+    },
+    "settings": {
+        "sourceLang": "JAVA_SCRIPT",
+        "esModule": false,
+        "generateCode": false
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "src/assets/sub-zero/being_hit/sprites/being_hit_01.png",
+                "type": "image",
+                "key": "being_hit_01"
+            },
+            {
+                "url": "src/assets/sub-zero/being_hit/sprites/being_hit_02.png",
+                "type": "image",
+                "key": "being_hit_02"
+            },
+            {
+                "url": "src/assets/sub-zero/being_hit/sprites/being_hit_03.png",
+                "type": "image",
+                "key": "being_hit_03"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false,
+        "visible": true
+    }
+}

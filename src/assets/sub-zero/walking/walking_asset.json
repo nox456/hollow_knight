@@ -1,0 +1,59 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "src/assets/sub-zero/walking/sprites/walking_01.png",
+                "type": "image",
+                "key": "walking_01"
+            },
+            {
+                "url": "src/assets/sub-zero/walking/sprites/walking_02.png",
+                "type": "image",
+                "key": "walking_02"
+            },
+            {
+                "url": "src/assets/sub-zero/walking/sprites/walking_03.png",
+                "type": "image",
+                "key": "walking_03"
+            },
+            {
+                "url": "src/assets/sub-zero/walking/sprites/walking_04.png",
+                "type": "image",
+                "key": "walking_04"
+            },
+            {
+                "url": "src/assets/sub-zero/walking/sprites/walking_05.png",
+                "type": "image",
+                "key": "walking_05"
+            },
+            {
+                "url": "src/assets/sub-zero/walking/sprites/walking_06.png",
+                "type": "image",
+                "key": "walking_06"
+            },
+            {
+                "url": "src/assets/sub-zero/walking/sprites/walking_07.png",
+                "type": "image",
+                "key": "walking_07"
+            },
+            {
+                "url": "src/assets/sub-zero/walking/sprites/walking_08.png",
+                "type": "image",
+                "key": "walking_08"
+            },
+            {
+                "url": "src/assets/sub-zero/walking/sprites/walking_09.png",
+                "type": "image",
+                "key": "walking_09"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false,
+        "visible": true
+    }
+}

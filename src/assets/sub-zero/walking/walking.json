@@ -1,0 +1,69 @@
+{
+    "anims": [
+        {
+            "key": "walkingwalking",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "walking_01",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "walking_02",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "walking_03",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "walking_04",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "walking_05",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "walking_06",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "walking_07",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "walking_08",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "walking_09",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 8,
+            "skipMissedFrames": true,
+            "repeat": -1,
+            "randomFrame": false
+        }
+    ],
+    "globalTimeScale": 1,
+    "meta": {
+        "app": "Phaser Editor 2D v3",
+        "contentType": "Phaser v3 Animations"
+    },
+    "settings": {
+        "sourceLang": "JAVA_SCRIPT",
+        "esModule": false,
+        "generateCode": false
+    }
+}

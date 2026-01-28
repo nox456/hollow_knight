@@ -1,0 +1,69 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "src/assets/sub-zero/punching/sprites/punching_01.png",
+                "type": "image",
+                "key": "punching_01"
+            },
+            {
+                "url": "src/assets/sub-zero/punching/sprites/punching_02.png",
+                "type": "image",
+                "key": "punching_02"
+            },
+            {
+                "url": "src/assets/sub-zero/punching/sprites/punching_03.png",
+                "type": "image",
+                "key": "punching_03"
+            },
+            {
+                "url": "src/assets/sub-zero/punching/sprites/punching_04.png",
+                "type": "image",
+                "key": "punching_04"
+            },
+            {
+                "url": "src/assets/sub-zero/punching/sprites/punching_05.png",
+                "type": "image",
+                "key": "punching_05"
+            },
+            {
+                "url": "src/assets/sub-zero/punching/sprites/punching_06.png",
+                "type": "image",
+                "key": "punching_06"
+            },
+            {
+                "url": "src/assets/sub-zero/punching/sprites/punching_07.png",
+                "type": "image",
+                "key": "punching_07"
+            },
+            {
+                "url": "src/assets/sub-zero/punching/sprites/punching_08.png",
+                "type": "image",
+                "key": "punching_08"
+            },
+            {
+                "url": "src/assets/sub-zero/punching/sprites/punching_09.png",
+                "type": "image",
+                "key": "punching_09"
+            },
+            {
+                "url": "src/assets/sub-zero/punching/sprites/punching_10.png",
+                "type": "image",
+                "key": "punching_10"
+            },
+            {
+                "url": "src/assets/sub-zero/punching/sprites/punching_11.png",
+                "type": "image",
+                "key": "punching_11"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false,
+        "visible": true
+    }
+}

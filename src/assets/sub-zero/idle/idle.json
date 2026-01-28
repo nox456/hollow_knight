@@ -1,0 +1,94 @@
+{
+    "anims": [
+        {
+            "key": "idleidle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "idle_01",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle_02",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle_03",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle_04",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle_05",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle_06",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle_07",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle_07",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle_06",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle_05",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle_04",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle_03",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle_02",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle_01",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 16,
+            "skipMissedFrames": true,
+            "repeat": -1,
+            "randomFrame": false
+        }
+    ],
+    "globalTimeScale": 1,
+    "meta": {
+        "app": "Phaser Editor 2D v3",
+        "contentType": "Phaser v3 Animations"
+    },
+    "settings": {
+        "sourceLang": "JAVA_SCRIPT",
+        "esModule": false,
+        "generateCode": false
+    }
+}

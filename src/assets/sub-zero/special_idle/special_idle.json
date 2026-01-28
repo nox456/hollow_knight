@@ -1,0 +1,59 @@
+{
+    "anims": [
+        {
+            "key": "special_idlespecial_idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "special_idle-01",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "special_idle-02",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "special_idle-03",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "special_idle-04",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "special_idle-04",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "special_idle-04",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "special_idle-04",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 5,
+            "skipMissedFrames": true,
+            "repeat": -1,
+            "randomFrame": false
+        }
+    ],
+    "globalTimeScale": 1,
+    "meta": {
+        "app": "Phaser Editor 2D v3",
+        "contentType": "Phaser v3 Animations"
+    },
+    "settings": {
+        "sourceLang": "JAVA_SCRIPT",
+        "esModule": false,
+        "generateCode": false
+    }
+}

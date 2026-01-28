@@ -1,0 +1,59 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "src/assets/sub-zero/idle/sprites/idle_01.png",
+                "type": "image",
+                "key": "idle_01"
+            },
+            {
+                "url": "src/assets/sub-zero/idle/sprites/idle_02.png",
+                "type": "image",
+                "key": "idle_02"
+            },
+            {
+                "url": "src/assets/sub-zero/idle/sprites/idle_03.png",
+                "type": "image",
+                "key": "idle_03"
+            },
+            {
+                "url": "src/assets/sub-zero/idle/sprites/idle_04.png",
+                "type": "image",
+                "key": "idle_04"
+            },
+            {
+                "url": "src/assets/sub-zero/idle/sprites/idle_05.png",
+                "type": "image",
+                "key": "idle_05"
+            },
+            {
+                "url": "src/assets/sub-zero/idle/sprites/idle_06.png",
+                "type": "image",
+                "key": "idle_06"
+            },
+            {
+                "url": "src/assets/sub-zero/idle/sprites/idle_07.png",
+                "type": "image",
+                "key": "idle_07"
+            },
+            {
+                "url": "src/assets/sub-zero/idle/sprites/idle_08.png",
+                "type": "image",
+                "key": "idle_08"
+            },
+            {
+                "url": "src/assets/sub-zero/idle/sprites/idle_09.png",
+                "type": "image",
+                "key": "idle_09"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false,
+        "visible": true
+    }
+}
