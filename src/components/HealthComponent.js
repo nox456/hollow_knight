@@ -31,12 +31,7 @@ class HealthComponent {
         if (knockbackDirection !== 0) {
             this.owner.body.setVelocity(knockbackDirection * knockbackForce, -100);
 
-            // Stop movement after a short delay (minimal push)
-            this.owner.scene.time.delayedCall(200, () => {
-                if (this.owner && this.owner.body) {
-                    this.owner.body.setVelocityX(0);
-                }
-            });
+            // Note: Movement stop is handled by Physics Drag and the HurtState logic
         }
 
         // Emitir evento de daño

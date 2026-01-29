@@ -32,23 +32,26 @@ class battle extends Phaser.Scene {
 		this.load.pack("subzero_die", "src/assets/sub-zero/die/sprites/die_asset.json");
 		this.load.pack("subzero_dizzy", "src/assets/sub-zero/dizzy/sprites/dizzy_asset.json");
 		// New Phase Animations
-		this.load.pack("subzero_blocking", "src/assets/sub-zero/blocking/sprites/blocking.json");
-		this.load.pack("subzero_being_hit2", "src/assets/sub-zero/being_hit/sprites/being_hit2.json");
-		this.load.pack("subzero_falling", "src/assets/sub-zero/falling/falling.json");
-		this.load.pack("subzero_special_attack", "src/assets/sub-zero/special_atack/special_attack.json");
+		// New Phase Animations
+		this.load.pack("subzero_blocking", "src/assets/sub-zero/blocking/blocking_asset.json");
+		// subzero_being_hit pack already contains being_hit2 images
+		this.load.pack("subzero_falling", "src/assets/sub-zero/falling/falling_asset.json");
+		this.load.pack("subzero_special_attack", "src/assets/sub-zero/special_atack/special_attack_asset.json");
 
 		// Sub-Zero animation definitions
 		this.load.animation("subzero_special_idle_anim", "src/assets/sub-zero/special_idle/special_idle.json");
 		this.load.animation("subzero_idle_anim", "src/assets/sub-zero/idle/idle.json");
 		this.load.animation("subzero_walking_anim", "src/assets/sub-zero/walking/walking.json");
-		this.load.animation("subzero_punch_anim", "src/assets/sub-zero/punching/punching.json"); g
+		this.load.animation("subzero_punch_anim", "src/assets/sub-zero/punching/punching.json");
 		this.load.animation("subzero_kick_anim", "src/assets/sub-zero/Kicking/kick.json");
 		this.load.animation("subzero_die_anim", "src/assets/sub-zero/die/die.json");
 		this.load.animation("subzero_dizzy_anim", "src/assets/sub-zero/dizzy/dizzy.json");
 		this.load.animation("subzero_being_hit_anim", "src/assets/sub-zero/being_hit/being_hit.json");
 		// New Phase Animation Definitions
-		this.load.animation("subzero_blocking_anim", "src/assets/sub-zero/blocking/blocking.json"); // Assuming animation file follows pattern
-		this.load.animation("subzero_being_hit2_anim", "src/assets/sub-zero/being_hit/being_hit2.json"); // Assuming this exists or is part of pack? wait, user said sprites/being_hit2.json
+		this.load.animation("subzero_blocking_anim", "src/assets/sub-zero/blocking/sprites/blocking.json");
+		this.load.animation("subzero_being_hit2_anim", "src/assets/sub-zero/being_hit/sprites/being_hit2.json");
+		this.load.animation("subzero_falling_anim", "src/assets/sub-zero/falling/falling.json");
+		this.load.animation("subzero_special_attack_anim", "src/assets/sub-zero/special_atack/special_attack.json");
 		// Wait, for Phaser packs, usually it loads the atlas/image. The animation JSON is separate.
 		// User provided paths:
 		// @[src/assets/sub-zero/blocking/sprites/blocking.json] -> Pack? Or Atlas? Usually "sprites" folder implies pack or atlas.
@@ -99,7 +102,7 @@ class battle extends Phaser.Scene {
 		this.load.image("particle_spark", "src/assets/particles/sprites/particle_sprite-4-1.png");
 
 		// Load background music
-		// this.load.audio("deep_docks_theme", "src/assets/sounds/song/Hollow Knight Silksong _ Deep Docks OST EXTENDED.mp3");
+		this.load.audio("deep_docks_theme", "src/assets/sounds/song/cancion.wav");
 
 		// Load Hornet SFX
 		this.load.audio("hornet_run_sfx", "src/assets/sounds/hornet/run.wav");
@@ -191,11 +194,11 @@ class battle extends Phaser.Scene {
 		this.setupEventListeners();
 
 		// // Play background music
-		// this.bgm = this.sound.add("deep_docks_theme", {
-		// 	loop: true,
-		// 	volume: 0.5
-		// });
-		// this.bgm.play();
+		this.bgm = this.sound.add("deep_docks_theme", {
+			loop: true,
+			volume: 0.3
+		});
+		this.bgm.play();
 	}
 
 	createUI() {
@@ -223,6 +226,9 @@ class battle extends Phaser.Scene {
 			console.log(`Hornet hurt! Health: ${data.health}/${data.maxHealth}`);
 			if (this.sound) {
 				this.sound.play('hornet_hurt_sfx');
+			}
+			if (this.player && this.player.stateMachine) {
+				this.player.stateMachine.setState('HURT');
 			}
 		});
 
@@ -325,30 +331,45 @@ class battle extends Phaser.Scene {
 
 	update() {
 		// Stable hitbox-based attack detection
-		if (this.player && this.player.active && this.boss && this.boss.active && this.player.combat.isAttacking) {
-			const playerHitbox = this.player.getStableHitbox();
-			const bossBody = this.boss.body;
+		// Stable hitbox-based attack detection
+		if (this.player && this.player.active && this.boss && this.boss.active) {
 
-			// Check rectangle intersection using stable player hitbox
-			const intersects = Phaser.Geom.Intersects.RectangleToRectangle(
-				new Phaser.Geom.Rectangle(playerHitbox.x, playerHitbox.y, playerHitbox.width, playerHitbox.height),
-				new Phaser.Geom.Rectangle(bossBody.x, bossBody.y, bossBody.width, bossBody.height)
-			);
+			// Check Player Attack on Boss
+			if (this.player.combat.isAttacking) {
+				const playerHitbox = this.player.getStableHitbox();
+				const bossBody = this.boss.body;
 
-			if (intersects && !this.player.combat.hasHit) {
-				const attackDirection = this.player.flipX ? -1 : 1;
+				// Check rectangle intersection using stable player hitbox
+				const intersects = Phaser.Geom.Intersects.RectangleToRectangle(
+					new Phaser.Geom.Rectangle(playerHitbox.x, playerHitbox.y, playerHitbox.width, playerHitbox.height),
+					new Phaser.Geom.Rectangle(bossBody.x, bossBody.y, bossBody.width, bossBody.height)
+				);
 
-				// Mark as hit to avoid multiple hitstops/damage in one swing
-				this.player.combat.hasHit = true;
+				if (intersects && !this.player.combat.hasHit) {
+					const attackDirection = this.player.flipX ? -1 : 1;
+					this.player.combat.hasHit = true;
+					this.boss.hurt(attackDirection);
+					this.time.delayedCall(50, () => {
+						this.triggerHitStop();
+					});
+				}
+			}
 
-				// Apply damage
-				this.boss.hurt(attackDirection);
+			// Check Boss Attack on Player
+			if (this.boss.isAttacking && this.boss.isDamageActive) {
+				const bossAttackHitbox = this.boss.getAttackHitbox();
+				const playerBody = this.player.body;
 
-				// Trigger hitstop with a tiny delay (50ms) to let the initial impact be seen
-				// as "after the blow lands"
-				this.time.delayedCall(50, () => {
-					this.triggerHitStop();
-				});
+				const intersects = Phaser.Geom.Intersects.RectangleToRectangle(
+					bossAttackHitbox,
+					new Phaser.Geom.Rectangle(playerBody.x, playerBody.y, playerBody.width, playerBody.height)
+				);
+
+				if (intersects) {
+					const knockbackDir = this.boss.x < this.player.x ? 1 : -1;
+					const knockbackForce = this.boss.currentKnockbackForce || Config.PLAYER_KNOCKBACK_VELOCITY;
+					this.player.health.takeDamage(this.boss.currentAttackDamage, knockbackDir, knockbackForce);
+				}
 			}
 		}
 	}

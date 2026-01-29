@@ -13,7 +13,11 @@ class BossAnimationComponent {
             'boss_kick': 'kickkick',
             'boss_die': 'subzero_diedie',
             'boss_dizzy': 'dizzydizzy',
-            'boss_hurt': 'being_hitbeing_hit'
+            'boss_hurt': 'being_hitbeing_hit',
+            'boss_blocking': 'blockingblock',
+            'boss_hurt_2': 'being_hit2being_hurt',
+            'boss_falling': 'fallingf',
+            'boss_special_attack': 'special_attackd'
         };
     }
 

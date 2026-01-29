@@ -37,6 +37,8 @@ class hornetPrefab extends Phaser.Physics.Arcade.Sprite {
 		this.setGravityY(Config.HORNET_GRAVITY);
 		this.setBounce(Config.HORNET_BOUNCE);
 		this.setCollideWorldBounds(true);
+		this.body.setMaxVelocity(Config.MAX_VELOCITY_X, Config.MAX_VELOCITY_Y);
+		this.body.setDragX(Config.DRAG_X);
 		this.applyGlowEffects();
 
 		this._needsInitialState = true;
@@ -50,6 +52,7 @@ class hornetPrefab extends Phaser.Physics.Arcade.Sprite {
 		this.stateMachine.registerState('DASH', new DashState(this));
 		this.stateMachine.registerState('DASH_IN_AIR', new DashInAirState(this));
 		this.stateMachine.registerState('ATTACK', new AttackState(this));
+		this.stateMachine.registerState('HURT', new HurtState(this));
 	}
 
 	preUpdate(time, delta) {

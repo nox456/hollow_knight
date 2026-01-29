@@ -45,7 +45,7 @@
                     "keyframe": false
                 }
             ],
-            "frameRate": 6,
+            "frameRate": 12,
             "skipMissedFrames": true,
             "repeat": -1,
             "randomFrame": false

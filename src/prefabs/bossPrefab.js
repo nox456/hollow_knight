@@ -14,6 +14,8 @@ class bossPrefab extends Phaser.Physics.Arcade.Sprite {
         this.isHurt = false;
         this.hurtTimer = null;
 
+        this.isDamageActive = false;
+
         // New animation state flags
         this.isDead = false;
         this.isDizzy = false;
@@ -40,8 +42,8 @@ class bossPrefab extends Phaser.Physics.Arcade.Sprite {
         scene.physics.add.existing(this, false);
 
         // Adjust size based on actual sprite dimensions (matched to 1.3 scale)
-        this.body.setSize(130, 200);
-        this.body.setOffset(-10, -50); // Adjusted to align feet with ground
+        this.body.setSize(70, 200);
+        this.body.setOffset(30, -50); // Adjusted to align feet with ground
 
         this.body.setGravityY(500);
         this.setCollideWorldBounds(true);
@@ -57,7 +59,7 @@ class bossPrefab extends Phaser.Physics.Arcade.Sprite {
         if (!this.body) return;
 
         // Dynamically adjust offset
-        const bodyWidth = 130;
+        const bodyWidth = 70;
         const bodyHeight = 200;
         const offsetX = (this.width * 0.5) - (bodyWidth / 2);
         const offsetY = this.height - bodyHeight;
@@ -136,8 +138,8 @@ class bossPrefab extends Phaser.Physics.Arcade.Sprite {
         this.canAttack = false;
         this.body.setVelocity(0);
 
-        // Keep orange tint for telegraphing
-        this.setTint(Config.BOSS_ATTACK_WINDUP_COLOR);
+        // Tint removed
+
 
         // Play idle during windup
         if (!this.animation.isAnimationLocked) {
@@ -153,6 +155,7 @@ class bossPrefab extends Phaser.Physics.Arcade.Sprite {
     attack() {
         this.isAttacking = true;
         this.body.setVelocity(0);
+        this.isDamageActive = false; // Reset damage flag
 
         // Attack Pool
         let attackAnims = ['boss_punch', 'boss_kick'];
@@ -163,13 +166,30 @@ class bossPrefab extends Phaser.Physics.Arcade.Sprite {
         const randomAttack = Phaser.Math.RND.pick(attackAnims);
 
         // Update Stats based on attack type
+        let damageDelay = 0;
         if (randomAttack === 'boss_special_attack') {
             this.currentAttackDamage = Config.BOSS_SPECIAL_ATTACK_DAMAGE;
             this.currentKnockbackForce = Config.BOSS_SPECIAL_ATTACK_KNOCKBACK;
-            if (this.scene.sound) this.scene.sound.play('boss_punch_sfx'); // Placeholder
+            if (this.scene.sound) this.scene.sound.play('boss_punch_sfx');
+
+            // Delay damage for special attack (animation faster now, 12fps)
+            damageDelay = 500;
+
         } else {
-            // Reset to Phase Standard
+            // Normal attacks hit immediately/quickly
+            damageDelay = 0;
             this.updatePhaseStats();
+        }
+
+        // Activate Damage Window
+        if (damageDelay > 0) {
+            this.scene.time.delayedCall(damageDelay, () => {
+                if (this.isAttacking) {
+                    this.isDamageActive = true;
+                }
+            });
+        } else {
+            this.isDamageActive = true;
         }
 
         // Play Sound
@@ -182,24 +202,12 @@ class bossPrefab extends Phaser.Physics.Arcade.Sprite {
         }
 
         // Play attack animation once
-        // For 'boss_special_attack', we map it to the loaded animation key 'subzero_special_attack_anim'
-        // But wait, my battle.js loader uses 'subzero_special_attack_anim'. The JSON likely defined 'boss_special_attack' internally?
-        // Or I should use the key I loaded: 'subzero_special_attack_anim'.
-        // If I use 'boss_special_attack' and it's not found, it won't play.
-        // Let's check logic:
-        // 'boss_punch' -> logic uses 'boss_punch'.
-        // 'boss_special_attack' -> user didn't specify internal key.
-        // I'll assume I should use the key I loaded: 'subzero_special_attack_anim' for the special one.
-
-        let animToPlay = randomAttack;
-        if (randomAttack === 'boss_special_attack') {
-            animToPlay = 'subzero_special_attack_anim';
-        }
-
-        this.animation.playOnce(animToPlay, () => {
+        this.animation.playOnce(randomAttack, () => {
             // Animation complete
             this.isAttacking = false;
-            this.clearTint();
+            this.isDamageActive = false;
+            // Tint removed
+
             this.updatePhaseStats(); // Reset stats to normal
 
             // Cooldown before next attack
@@ -208,8 +216,8 @@ class bossPrefab extends Phaser.Physics.Arcade.Sprite {
             });
         });
 
-        // Keep red tint during attack
-        this.setTint(Config.BOSS_ATTACK_COLOR);
+        // Tint removed
+
     }
 
     updatePhaseStats() {
@@ -227,15 +235,30 @@ class bossPrefab extends Phaser.Physics.Arcade.Sprite {
         }
     }
 
+    getAttackHitbox() {
+        const attackRange = 100; // Attack range extension
+        const height = 100;
+
+        let x = this.x;
+        // If facing left (flipX is true), attack box is to the left
+        if (this.flipX) {
+            x = this.x - (this.body.width / 2) - attackRange;
+        } else {
+            x = this.x + (this.body.width / 2);
+        }
+
+        return new Phaser.Geom.Rectangle(x, this.y - height, attackRange, height);
+    }
+
     hurt(attackDirection) {
-        if (this.isHurt || this.isDead || this.isFalling || this.isDizzy) {
+        if (this.isHurt || this.isDead || this.isFalling) {
             return;
         }
 
-        // Phase 2+ Blocking Chance
-        if (this.currentPhase >= 2 && Math.random() < Config.BOSS_BLOCK_CHANCE) {
+        // Phase 2+ Blocking Chance (Only if not Dizzy)
+        if (!this.isDizzy && this.currentPhase >= 2 && Math.random() < Config.BOSS_BLOCK_CHANCE) {
             // Trigger Block
-            this.animation.playOnce('subzero_blocking_anim', () => {
+            this.animation.playOnce('boss_blocking', () => {
                 this.animation.play('boss_idle');
             });
             return; // Negate damage
@@ -284,14 +307,15 @@ class bossPrefab extends Phaser.Physics.Arcade.Sprite {
         // Random Hurt Animation for Phase 2+
         let hurtAnim = 'boss_hurt';
         if (this.currentPhase >= 2) {
-            hurtAnim = Math.random() > 0.5 ? 'boss_hurt' : 'subzero_being_hit2_anim';
+            hurtAnim = Math.random() > 0.5 ? 'boss_hurt' : 'boss_hurt_2';
         }
 
         // Play hurt animation
         this.animation.playOnce(hurtAnim, () => {
             if (!this.active) return;
             this.isHurt = false;
-            this.clearTint();
+            // Tint removed
+
             this.canAttack = true;
         });
 
@@ -301,7 +325,8 @@ class bossPrefab extends Phaser.Physics.Arcade.Sprite {
             this.scene.sound.play(hurtSfx);
         }
 
-        this.setTint(Config.BOSS_HURT_COLOR);
+        // Tint removed
+
 
         const knockbackDirection = attackDirection > 0 ? 1 : -1;
         this.body.setVelocity(knockbackDirection * Config.BOSS_KNOCKBACK_VELOCITY, -200);
@@ -337,7 +362,7 @@ class bossPrefab extends Phaser.Physics.Arcade.Sprite {
         this.body.setVelocity(knockbackDirection * 600, -800); // Big launch
 
         // Play Falling Animation
-        this.animation.play('subzero_falling_anim');
+        this.animation.play('boss_falling');
 
         this.scene.time.delayedCall(1500, () => {
             if (!this.active) return;
@@ -374,7 +399,8 @@ class bossPrefab extends Phaser.Physics.Arcade.Sprite {
         this.hasTriggeredDizzy = true;
         this.isDizzy = true;
         this.body.setVelocity(0);
-        this.clearTint();
+        // Tint removed
+
 
         // Play Dizzy Sound
         if (this.scene.sound) {
@@ -387,19 +413,15 @@ class bossPrefab extends Phaser.Physics.Arcade.Sprite {
         // Play dizzy animation
         this.animation.play('boss_dizzy');
 
-        // Return to combat after dizzy duration
-        this.scene.time.delayedCall(Config.BOSS_DIZZY_DURATION_MS, () => {
-            if (!this.active) return;
-            this.isDizzy = false;
-            this.canAttack = true;
-            this.animation.play('boss_idle');
-        });
+        // Do NOT recover automatically. Stays dizzy until final hit (Finish Him mechanic).
+        // The next hit will kill him.
     }
 
     die() {
         this.isDead = true;
         this.body.setVelocityX(0);
-        this.clearTint();
+        // Tint removed
+
 
         // Play Death Sound
         if (this.scene.sound) {
